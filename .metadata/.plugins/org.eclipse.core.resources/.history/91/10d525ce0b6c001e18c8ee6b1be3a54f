@@ -43,6 +43,8 @@ public class PlacesDaoImpl implements PlacesDao {
 
 	}
 	
+	
+
 	@Override
 	public List<Places> findAll() {
 		// TODO Auto-generated method stub

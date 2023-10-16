@@ -15,15 +15,7 @@ public class PlacesDaoImpl implements PlacesDao {
 
 	@Autowired
 	JdbcTemplate template;
-	
-	public RowMapper<Places> srm = (resultSet, rowNum) -> {
-		Places p = new Places();
-		p.setId(resultSet.getInt(1));
-		p.setName(resultSet.getString(2));
-		p.setCity(resultSet.getString(3));
-		return p;
-	};
-	
+
 	@Override
 	public void addPlace(Places p) {
 		template.execute("insert into places values(?, ?, ?)", (PreparedStatement ps) -> {
@@ -38,11 +30,29 @@ public class PlacesDaoImpl implements PlacesDao {
 	public Places findByCity(String city) {
 		// TODO Auto-generated method stub
 		String sql = "SELECT * FROM places WHERE city = ?";
-		List<Places> places = template.query(sql, srm, city);
+		List<Places> places = template.query(sql, new RowMapper<Places>() {
+			@Override
+			public Places mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Places place = new Places();
+				place.setId(rs.getInt("id"));
+				place.setName(rs.getString("name"));
+				place.setCity(rs.getString("city"));
+				return place;
+			}
+		}, city);
+
 		return places.isEmpty() ? null : places.get(0);
 
 	}
 	
+	public RowMapper<Places> srm = (resultSet, rowNum) -> {
+		Places p = new Places();
+		p.setId(resultSet.getInt(1));
+		p.setName(resultSet.getString(2));
+		p.setCity(resultSet.getString(3));
+		return p;
+	};
+
 	@Override
 	public List<Places> findAll() {
 		// TODO Auto-generated method stub

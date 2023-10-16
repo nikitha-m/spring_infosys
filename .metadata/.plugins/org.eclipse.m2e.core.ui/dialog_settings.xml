@@ -64,6 +64,8 @@
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="Places"/>
+			<item value="aop_assn"/>
 			<item value="Students"/>
 			<item value="JDBCMySQL"/>
 			<item value="StudentDetails"/>
@@ -77,7 +79,6 @@
 			<item value="UniversityMgmt"/>
 			<item value="PaymentProcessing"/>
 			<item value="dependencyinjection"/>
-			<item value="DependencyInjection1"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

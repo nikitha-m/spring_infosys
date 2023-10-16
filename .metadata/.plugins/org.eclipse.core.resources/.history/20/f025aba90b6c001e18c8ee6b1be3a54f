@@ -23,7 +23,7 @@ public class Main {
 		
 		System.out.println("=========================================");
 		
-		Places res = pservice.find("Imagica");
+		Places res = pservice.find("Bangalore");
 		System.out.println(res);
 		
 		System.out.println("=========================================");
