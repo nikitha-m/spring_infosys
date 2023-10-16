@@ -1,0 +1,10 @@
+package com.infosys.service;
+
+import com.infosys.repository.StudentDao;
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class StudentService {
+	
+	@Autowired
+	StudentDao studentDao;
+}

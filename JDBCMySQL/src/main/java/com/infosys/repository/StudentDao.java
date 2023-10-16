@@ -1,0 +1,13 @@
+package com.infosys.repository;
+
+import java.util.List;
+
+import com.infosys.entity.Student;
+
+public interface StudentDao {
+	public List<Student> findAll();
+	
+	public void addStudent(Student s);
+	
+	public Student findById(int id);
+}

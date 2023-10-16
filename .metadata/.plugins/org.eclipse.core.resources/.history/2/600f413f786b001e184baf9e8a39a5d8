@@ -1,0 +1,17 @@
+package com.infosys.config;
+
+import org.apache.commons.dbcp2.BasicDataSource;
+import org.springframework.context.annotation.Bean;
+public class AppConfig {
+	
+	@Bean
+	public BasicDataSource dataSource() {
+		BasicDataSource bds = new BasicDataSource ();
+		
+		bds.setDriverClassName("com.mysql.cj.jdbc.Driver");
+		bds.setUrl("jdbc:mysql://localhost:3306/infosys");
+		bds.setUsername("root");
+		bds.setPassword("admin");
+		return bds;
+	}
+}

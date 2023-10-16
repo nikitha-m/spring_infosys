@@ -1,0 +1,16 @@
+package com.infosys.aop;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.ApplicationContext;
+
+public class AopMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+		ShapeService shape = context.getBean("service", ShapeService.class);
+		System.out.println(shape.getCircle());
+		System.out.println(shape.getTriangle());
+	}
+
+}

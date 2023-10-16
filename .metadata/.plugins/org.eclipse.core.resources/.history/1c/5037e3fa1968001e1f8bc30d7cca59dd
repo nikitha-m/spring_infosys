@@ -1,0 +1,11 @@
+package com.infosys.aop;
+
+import org.aspectj.lang.annotation.*;
+//Aspect class
+
+@Aspect
+public class LoggingAspect {
+	public void loggingAdvice() {
+		System.out.println("Advice run. Get method calling");
+	}
+}

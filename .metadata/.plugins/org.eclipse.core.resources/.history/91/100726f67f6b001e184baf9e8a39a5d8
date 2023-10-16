@@ -1,0 +1,30 @@
+package com.infosys.repository;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import com.infosys.entity.Student;
+
+public class StudentRepositoryImpl {
+	@Autowired
+	private JdbcTemplate jdbcTemplate;
+
+	@Override
+	public Student save(Student student) {
+		String sql = "INSERT INTO student (name, subject) VALUES (?, ?)";
+		jdbcTemplate.update(sql, student.getName(), student.getSubject());
+		return student;
+	}
+
+	@Override
+	public Student findById(Long id) {
+		String sql = "SELECT * FROM student WHERE id = ?";
+		return jdbcTemplate.queryForObject(sql, new Object[] { id }, (rs, rowNum) -> {
+			Student student = new Student();
+			student.setId(rs.getLong("id"));
+			student.setName(rs.getString("name"));
+			student.setSubject(rs.getString("subject"));
+			return student;
+		});
+	}
+}

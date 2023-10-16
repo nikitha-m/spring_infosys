@@ -1,0 +1,48 @@
+package com.infosys.Test;
+
+import java.util.List;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.infosys.config.AppConfig;
+import com.infosys.entity.Places;
+import com.infosys.service.PlacesService;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+
+		PlacesService pservice = (PlacesService) ctx.getBean(PlacesService.class);
+
+//		Places p = new Places(4, "Truffles", "Bangalore");
+		
+//		pservice.add(p);
+		System.out.println("Added");
+		
+		System.out.println("=========================================");
+		
+		Places res = pservice.find("Bangalore");
+		System.out.println(res);
+		
+		System.out.println("=========================================");
+		List<Places> place = pservice.finda();
+		
+		place.forEach(System.out::println);
+		
+		System.out.println("=========================================");
+		
+		Places p = new Places(4, "Truffle", "Blr");
+		pservice.update(p);
+		System.out.println("Updated");
+		
+		System.out.println("=========================================");
+		
+		Places pl = new Places(5, "place", "city");
+		
+		pservice.add(pl);
+		pservice.delete(pl);
+	}
+
+}

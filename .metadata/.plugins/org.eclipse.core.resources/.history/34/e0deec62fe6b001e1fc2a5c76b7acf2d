@@ -1,0 +1,17 @@
+package com.infosys.Test;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.infosys.config.AppConfig;
+import com.infosys.entity.Places;
+import com.infosys.service.PlacesService;
+
+public class PlacesTest {
+	AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+
+	PlacesService pservice = (PlacesService) ctx.getBean(PlacesService.class);
+
+	Places p = new Places(3, "Bangalore", "Wonderla");
+	
+	System.out.println("Added");
+}

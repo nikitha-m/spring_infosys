@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="ord" class="com.infosys.DependencyInjection1.Order">
+        <property name="productid" value="1234" />
+        <property name="productname" value="Laptop" />
+        <property name="orderdate" value="15 Sep" />
+        <property name="customer">
+            <bean id="customer"
+                class="com.infosys.DependencyInjection1.Customer">
+                <property name="name" value="Swathi" />
+                <property name="contact" value="12344567" />
+                <property name="address" value="Karnataka" />
+            </bean>
+        </property>
+    </bean>
+</beans>

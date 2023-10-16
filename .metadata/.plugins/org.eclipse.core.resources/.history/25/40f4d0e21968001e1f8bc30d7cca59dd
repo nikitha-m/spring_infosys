@@ -1,0 +1,9 @@
+package com.infosys.aop;
+
+//Aspect class
+
+public class LoggingAspect {
+	public void loggingAdvice() {
+		System.out.println();
+	}
+}

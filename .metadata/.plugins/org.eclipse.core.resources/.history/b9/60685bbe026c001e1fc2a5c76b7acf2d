@@ -1,0 +1,17 @@
+package com.infosys.repository;
+
+import java.util.List;
+
+import com.infosys.entity.Places;
+
+public interface PlacesDao {
+	public void addPlace(Places p);
+
+	public Places findByCity(String city);
+
+	public List<Places> findAll();
+
+//	public void updatePlace(int id);
+//
+//	public void deletePlace(int id);
+}

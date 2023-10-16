@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="colList" class="com.infosys.collection.ColorList">
+		<constructor-arg>
+			<list>
+				<value>Red</value>
+				<value>Blue</value>
+				<value>Yellow</value>
+			</list>
+		</constructor-arg>
+	</bean>
+	<bean id="quesSet" class="com.infosys.collection.Question">
+		<property name="question" value="Postgres datatype"></property>
+		<property name="answers">
+			<set>
+				<value>Hstore</value>
+				<value>integer</value>
+				<value>Hstore</value>
+			</set>
+		</property>
+	</bean>
+	<bean id="ans1" class="com.infosys.collection.Question">
+		<property name="answers" value="Hstore"></property>
+	</bean>
+	<bean id="ans2" class="com.infosys.collection.Question">
+		<property name="answers" value="integer"></property>
+	</bean>
+	<bean id="ans3" class="com.infosys.collection.Question">
+		<property name="answers" value="Hstore"></property>
+	</bean> 
+	<bean id="user1" class="com.infosys.collection.User">
+		<property name="name" value="Nikitha"></property>
+		<property name="age" value="21"></property>
+	</bean>
+	<bean id="mobile" class="com.infosys.collection.Mobile">
+		<constructor-arg value="Samsung" index="0"></constructor-arg>
+		<constructor-arg>
+			<list>
+				<value>Smart</value>
+				<value>Dumb</value>
+			</list>
+		</constructor-arg>
+	</bean>
+</beans>

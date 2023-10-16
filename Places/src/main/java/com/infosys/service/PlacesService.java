@@ -1,0 +1,34 @@
+package com.infosys.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.infosys.entity.Places;
+import com.infosys.repository.PlacesDao;
+
+public class PlacesService {
+	
+	@Autowired
+	PlacesDao placesDao;
+	
+	public void add(Places p) {
+		placesDao.addPlace(p);
+	}
+	
+	public Places find(String city) {
+		return placesDao.findByCity(city);
+	}
+	
+	public List<Places> finda(){
+		return placesDao.findAll();
+	}
+	
+	public void update(Places p) {
+		placesDao.updatePlace(p);
+	}
+	
+	public void delete(Places p) {
+		placesDao.deletePlace(p);
+	}
+}

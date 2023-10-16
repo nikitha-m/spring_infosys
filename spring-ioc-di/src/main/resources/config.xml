@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="person1" class="com.infosys.second.Person">
+		<constructor-arg value="Nikki" index="0"></constructor-arg>
+		<constructor-arg value="21" index="1" type="int"></constructor-arg>
+		<constructor-arg ref="address"></constructor-arg>
+	</bean>
+	<bean id="product" class="com.infosys.second.Product">
+		<constructor-arg value="headphones" index="0"></constructor-arg>
+		<constructor-arg ref="category"></constructor-arg>
+	</bean>
+	<bean id="category" class="com.infosys.second.Category">
+		<constructor-arg value="Ele"></constructor-arg>
+	</bean>
+	<bean id="person2" class="com.infosys.second.Person2">
+		<property name="age" value="21"></property>
+	</bean>
+	<bean id="address" class="com.infosys.second.Address">
+		<constructor-arg value="India"></constructor-arg>
+	</bean>
+	
+</beans>

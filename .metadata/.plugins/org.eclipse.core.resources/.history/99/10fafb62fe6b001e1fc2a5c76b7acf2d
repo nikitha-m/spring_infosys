@@ -1,0 +1,10 @@
+package com.infosys.Test;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.infosys.config.AppConfig;
+import com.infosys.entity.Places;
+import com.infosys.service.PlacesService;
+
+public class PlacesTest {
+	}

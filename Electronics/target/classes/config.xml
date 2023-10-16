@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="customer1"
+		class="com.infosys.electronics.CustomerDetail">
+		<property name="customerName" value="Nikitha" />
+		<property name="customerAge" value="21" />
+	</bean>
+
+	<bean id="customer2"
+		class="com.infosys.electronics.CustomerDetail">
+		<property name="customerName" value="Joy" />
+		<property name="customerAge" value="25" />
+	</bean>
+
+
+	<bean id="product1" class="com.infosys.electronics.ProductDetail">
+		<property name="productName" value="Laptop" />
+		<property name="quantity" value="1" />
+	</bean>
+
+	<bean id="product2" class="com.infosys.electronics.ProductDetail">
+		<property name="productName" value="Smartphone" />
+		<property name="quantity" value="2" />
+	</bean>
+
+	<bean id="electronics" class="com.infosys.electronics.Electronics">
+		<property name="orders">
+			<map>
+				<entry key-ref="customer1" value-ref="product1" />
+				<entry key-ref="customer2" value-ref="product2" />
+			</map>
+		</property>
+	</bean>
+</beans>

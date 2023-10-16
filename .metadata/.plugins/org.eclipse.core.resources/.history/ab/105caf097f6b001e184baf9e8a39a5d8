@@ -1,0 +1,8 @@
+package com.infosys.repository;
+
+import com.infosys.entity.Student;
+
+public interface StudentRepository {
+	 Student save(Student student);
+	 Student findById(Long id);
+}

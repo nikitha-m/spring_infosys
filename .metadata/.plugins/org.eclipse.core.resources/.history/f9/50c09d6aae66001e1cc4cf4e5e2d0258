@@ -1,0 +1,16 @@
+package com.infosys.anno;
+
+import java.util.List;
+
+public class UserDAOImpl implements userDAO{
+
+	@Override
+	public void addUser(User u) {
+		
+	}
+	
+	@Override
+	public List<User> findAll(){
+		return null;
+	}
+}

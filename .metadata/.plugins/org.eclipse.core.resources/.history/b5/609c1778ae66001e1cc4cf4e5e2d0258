@@ -1,0 +1,22 @@
+package com.infosys.anno;
+
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class UserDAOImpl implements userDAO{
+
+	Map<Integer, User> repository = new TreeMap<>();
+	@Override
+	public void addUser(User u) {
+		
+	}
+	
+	@Override
+	public List<User> findAll(){
+		return null;
+	}
+}

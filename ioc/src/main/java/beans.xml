@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="https://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="https://www.springframework.org/schema/beans https://www.springframWework.org/schema/beans/spring-beans-4.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+	<bean id="airtel" class="com.infosys.airtel"></bean>
+</beans>

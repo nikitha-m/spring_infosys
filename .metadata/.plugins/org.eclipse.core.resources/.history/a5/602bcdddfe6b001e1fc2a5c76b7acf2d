@@ -1,0 +1,39 @@
+package com.infosys.repository;
+
+import java.sql.PreparedStatement;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import com.infosys.entity.Places;
+
+public class PlacesDaoImpl implements PlacesDao {
+	
+	@Autowired
+	JdbcTemplate template;
+
+	@Override
+	public void addPlace(Places p) {
+		// TODO Auto-generated method stub
+		template.execute("insert into places values(?, ?, ?)", (PreparedStatement ps) -> {
+			ps.setInt(1, p.getId());
+			ps.setString(2, p.getName());
+			ps.setString(3, p.getCity());
+			return ps.executeUpdate();
+		});
+	}
+//
+//	@Override
+//	public Places findByCity(String city) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//
+//	@Override
+//	public List<Places> findAll() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+
+}

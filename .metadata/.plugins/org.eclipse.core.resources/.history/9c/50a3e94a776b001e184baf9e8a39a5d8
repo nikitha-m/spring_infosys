@@ -1,0 +1,11 @@
+package com.infosys.config;
+
+import org.apache.commons.dbcp2.BasicDataSource;
+public class AppConfig {
+	
+	public BasicDataSource dataSource() {
+		BasicDataSource bds = new BasicDataSource ();
+		
+		return bds;
+	}
+}

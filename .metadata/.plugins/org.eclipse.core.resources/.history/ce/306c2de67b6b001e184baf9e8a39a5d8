@@ -1,0 +1,20 @@
+package com.infosys.test;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.infosys.config.AppConfig;
+import com.infosys.service.StudentService;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+	 
+		StudentService studentService = (StudentService) ctx.getBean(StudentService.class);
+		List<Student> student = studentService.showAll();
+		
+		student.forEach(System.out::println )
+	}
+
+}

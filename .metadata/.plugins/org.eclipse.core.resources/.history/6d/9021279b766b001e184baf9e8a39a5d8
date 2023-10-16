@@ -1,0 +1,9 @@
+package com.infosys.entity;
+
+public class Student {
+	int roll;
+	String name;
+	String subject;
+	int fee;
+	
+}

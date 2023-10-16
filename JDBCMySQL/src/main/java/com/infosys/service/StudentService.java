@@ -1,0 +1,26 @@
+package com.infosys.service;
+
+import com.infosys.entity.Student;
+import com.infosys.repository.StudentDao;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class StudentService {
+
+	@Autowired
+	StudentDao studentDao;
+
+	public List<Student> showAll() {
+		return studentDao.findAll();
+	}
+	
+	public void add(Student s) {
+		studentDao.addStudent(s);
+	}
+	
+	public Student find(int id) {
+		return studentDao.findById(id);
+	}
+}
